@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-plus-jakarta), system-ui, sans-serif;
+    color: #3D4F66;
+  }
+
+  body {
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbar and utilities */
+.bg-grid-pattern {
+  background-image: radial-gradient(#E4EAF2 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Focus outline for accessibility */
+*:focus-visible {
+  outline: 2px solid #1F5FAD;
+  outline-offset: 2px;
+}

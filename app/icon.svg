@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1B3D"/>
+      <stop offset="100%" stop-color="#0052CC"/>
+    </linearGradient>
+    <linearGradient id="tankGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="50%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFAB00"/>
+      <stop offset="100%" stop-color="#FF8F00"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Badge -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)"/>
+  
+  <!-- Tanker Truck Icon Silhouette -->
+  <!-- Cab -->
+  <path d="M100 320 V 220 H 170 L 220 260 V 320 Z" fill="#FFFFFF"/>
+  <path d="M175 230 H 165 V 260 H 208 Z" fill="#0B1B3D"/>
+  
+  <!-- Tank Trailer -->
+  <rect x="230" y="200" width="180" height="120" rx="45" fill="url(#tankGrad)"/>
+  <rect x="270" y="190" width="30" height="10" rx="3" fill="#64748B"/>
+  <rect x="330" y="190" width="30" height="10" rx="3" fill="#64748B"/>
+  
+  <!-- Food Drop Symbol on Tank -->
+  <path d="M320 230 C 320 230, 300 255, 300 270 A 20 20 0 0 0 340 270 C 340 255, 320 230, 320 230 Z" fill="url(#accentGrad)"/>
+  
+  <!-- Wheels -->
+  <circle cx="140" cy="335" r="30" fill="#1E293B"/>
+  <circle cx="140" cy="335" r="14" fill="#94A3B8"/>
+  
+  <circle cx="270" cy="335" r="30" fill="#1E293B"/>
+  <circle cx="270" cy="335" r="14" fill="#94A3B8"/>
+  
+  <circle cx="340" cy="335" r="30" fill="#1E293B"/>
+  <circle cx="340" cy="335" r="14" fill="#94A3B8"/>
+
+  <circle cx="390" cy="335" r="30" fill="#1E293B"/>
+  <circle cx="390" cy="335" r="14" fill="#94A3B8"/>
+</svg>
