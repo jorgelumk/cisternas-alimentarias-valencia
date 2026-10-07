@@ -18,16 +18,36 @@ export function QuoteForm() {
     honeypot: "", // Antispam field
   });
 
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.honeypot) return; // Silent reject for spam bots
 
     setStatus("submitting");
+    setErrorMessage("");
 
-    // Simulating Server Action / API processing
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/contacto", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || data.error) {
+        throw new Error(data.error || "Error al enviar la solicitud.");
+      }
+
       setStatus("success");
-    }, 1200);
+    } catch (err: any) {
+      console.error("Error al enviar el formulario:", err);
+      setErrorMessage(err?.message || "Ocurrió un error al enviar el formulario. Por favor inténtalo de nuevo.");
+      setStatus("error");
+    }
   };
 
   return (
@@ -45,6 +65,12 @@ export function QuoteForm() {
       <p className="text-text-600 text-sm mt-1 mb-8">
         Completa el formulario y nuestro equipo de logística te enviará una propuesta personalizada en <strong>menos de 2 horas laborables</strong>.
       </p>
+
+      {status === "error" && (
+        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm font-semibold">
+          {errorMessage}
+        </div>
+      )}
 
       {status === "success" ? (
         <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8 text-center space-y-4">
